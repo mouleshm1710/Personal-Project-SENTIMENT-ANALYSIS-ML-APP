@@ -4,7 +4,6 @@ import streamlit as st
 import nltk
 import gensim 
 import sklearn 
-import gzip
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon') 
 import re
@@ -13,11 +12,11 @@ nltk.download('punkt') # dependancy
 nltk.download('wordnet') # dependancy   
 import numpy as np
 
-pickle_1 = gzip.open('glove_vocab.pkl', 'rb')
+pickle_1 = open('glove_vocab.pkl', 'rb')
 glove_words = pickle.load(pickle_1)
 pickle_1.close()
 
-pickle_2 = gzip.open('glove_vectors', 'rb') 
+pickle_2 = open('glove_vectors', 'rb') 
 model_key_vectors = pickle.load(pickle_2)
 pickle_2.close()
 
