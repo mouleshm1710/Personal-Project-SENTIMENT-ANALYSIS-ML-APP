@@ -12,7 +12,7 @@ nltk.download('punkt') # dependancy
 nltk.download('wordnet') # dependancy   
 import numpy as np
 
-pickle_1 = open('glove_vocab.pkl', 'rb') 
+pickle_1 = open('glove_vocab.pkl', 'rb')
 glove_words = pickle.load(pickle_1)
 pickle_1.close()
 
