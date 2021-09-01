@@ -6,4 +6,3 @@ nltk
 gensim
 regex
 pickle-mixin
-gzip
