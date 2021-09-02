@@ -1,7 +1,7 @@
  
 import pickle
 import streamlit as st
-#import nltk
+import nltk
 import gensim 
 import sklearn 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
