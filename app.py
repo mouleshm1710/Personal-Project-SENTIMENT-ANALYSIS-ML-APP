@@ -1,13 +1,13 @@
  
 import pickle
 import streamlit as st
-import nltk
+#import nltk
 import gensim 
 import sklearn 
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+#from nltk.sentiment.vader import SentimentIntensityAnalyzer
 #nltk.download('vader_lexicon') 
 import re
-from nltk.stem import WordNetLemmatizer
+#from nltk.stem import WordNetLemmatizer
 #nltk.download('punkt') # dependancy
 #nltk.download('wordnet') # dependancy   
 import numpy as np
@@ -80,14 +80,14 @@ def preprocessing_txt(text_data):
     replaced = replaced.strip()
     
     # Tokenize: Split the tweet into words
-    word_list = nltk.word_tokenize(replaced)
+    #word_list = nltk.word_tokenize(replaced)
     
     # lemmatize the list of words and join as a sentence
-    lemmatizer = WordNetLemmatizer()
-    lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in word_list])
+    #lemmatizer = WordNetLemmatizer()
+    #lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in word_list])
     
     # finally append the cleaned text to the list
-    preprocessed_text.append(lemmatized_output)
+    preprocessed_text.append(replaced)
     
     return preprocessed_text[0] # return the list
 
@@ -109,7 +109,7 @@ def vectorize(new_tweet):
 
 
 
-def polarity_scores(new_tweet):
+'''def polarity_scores(new_tweet):
     
     # Obtain the polarity scores of the tweet
     scores = []
@@ -119,7 +119,7 @@ def polarity_scores(new_tweet):
     for k in ss.items():
         scores.append(k[1])
         
-    return scores
+    return scores'''
 
 
 def main():      
@@ -145,10 +145,10 @@ def main():
        Vectorized_output = list(vectorize(Cleaned_text))   # list 
        #st.success("Dimension of vectorized output --> {}".format(len(Vectorized_output)))
        
-       Polarity_scores =  polarity_scores(Cleaned_text) # list
+       #Polarity_scores =  polarity_scores(Cleaned_text) # list
        #st.success("Dimension of Polarity scores --> {}".format(len(Polarity_scores)))
 
-       Vectorized_output.extend(Polarity_scores)
+       #Vectorized_output.extend(Polarity_scores)
        final_vector =  np.array(Vectorized_output) 
        #st.success("Dimension of final_vector --> {}".format(final_vector.shape))
        
