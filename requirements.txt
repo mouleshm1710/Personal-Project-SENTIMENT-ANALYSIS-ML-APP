@@ -2,7 +2,6 @@ numpy
 scikit-learn
 pandas
 streamlit==0.73.0
-nltk
 gensim
 regex
 pickle-mixin
