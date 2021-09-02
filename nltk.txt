@@ -1,5 +1,3 @@
-popular
 wordnet
 punkt
-stopwords
 vader_lexicon
