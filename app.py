@@ -5,11 +5,11 @@ import nltk
 import gensim 
 import sklearn 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-nltk.download('vader_lexicon') 
+#nltk.download('vader_lexicon') 
 import re
 from nltk.stem import WordNetLemmatizer
-nltk.download('punkt') # dependancy
-nltk.download('wordnet') # dependancy   
+#nltk.download('punkt') # dependancy
+#nltk.download('wordnet') # dependancy   
 import numpy as np
 
 pickle_1 = open('glove_vocab.pkl', 'rb')
