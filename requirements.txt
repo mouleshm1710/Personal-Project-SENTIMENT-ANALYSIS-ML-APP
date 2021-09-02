@@ -5,3 +5,4 @@ streamlit==0.73.0
 gensim
 regex
 pickle-mixin
+nltk
