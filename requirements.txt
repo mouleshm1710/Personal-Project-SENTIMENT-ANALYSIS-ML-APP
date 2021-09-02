@@ -1,7 +1,7 @@
 numpy
 scikit-learn
 pandas
-streamlit==0.73.0
+streamlit
 gensim
 pickle-mixin
 nltk
