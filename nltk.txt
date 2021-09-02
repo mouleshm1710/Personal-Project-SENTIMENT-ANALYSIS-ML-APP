@@ -1,3 +1,4 @@
+popular
 wordnet
 punkt
 stopwords
