@@ -12,7 +12,7 @@ import re
 #nltk.download('wordnet') # dependancy   
 import numpy as np
 
-pickle_1 = open('glove_vocab.pkl', 'rb')
+'''pickle_1 = open('glove_vocab.pkl', 'rb')
 glove_words = pickle.load(pickle_1)
 pickle_1.close()
 
@@ -26,7 +26,7 @@ pickle_3.close()
 
 pickle_4 = open('log_model2.pkl', 'rb') 
 classifier = pickle.load(pickle_4)
-pickle_4.close()
+pickle_4.close()'''
 
 minmaxscaler.clip = False
 
@@ -91,7 +91,7 @@ def preprocessing_txt(text_data):
     
     return preprocessed_text[0] # return the list
 
-def vectorize(new_tweet):
+'''def vectorize(new_tweet):
     
     avg_w2v_vector = []; # the avg-w2v for each sentence is stored in this list
     
@@ -105,7 +105,7 @@ def vectorize(new_tweet):
         vector /= cnt_words
     avg_w2v_vector.append(vector)  # Append the vector
 
-    return avg_w2v_vector[0]
+    return avg_w2v_vector[0]'''
 
 
 
@@ -140,34 +140,34 @@ def main():
     if st.button("Predict"): 
 
        Cleaned_text = preprocessing_txt(Tweet)
-       #st.success("We got our cleaned text --> {}".format(Cleaned_text))
+       st.success("We got our cleaned text --> {}".format(Cleaned_text))
        
-       Vectorized_output = list(vectorize(Cleaned_text))   # list 
+       #Vectorized_output = list(vectorize(Cleaned_text))   # list 
        #st.success("Dimension of vectorized output --> {}".format(len(Vectorized_output)))
        
        #Polarity_scores =  polarity_scores(Cleaned_text) # list
        #st.success("Dimension of Polarity scores --> {}".format(len(Polarity_scores)))
 
        #Vectorized_output.extend(Polarity_scores)
-       final_vector =  np.array(Vectorized_output) 
+       #final_vector =  np.array(Vectorized_output) 
        #st.success("Dimension of final_vector --> {}".format(final_vector.shape))
        
-       reshaped_array = final_vector.reshape((1,-1))
+       #reshaped_array = final_vector.reshape((1,-1))
        
-       scaled_vector = minmaxscaler.transform(reshaped_array)
+       #scaled_vector = minmaxscaler.transform(reshaped_array)
 
-       output = classifier.predict(scaled_vector) 
-       prob = classifier.predict_proba(scaled_vector)
+       #output = classifier.predict(scaled_vector) 
+       #prob = classifier.predict_proba(scaled_vector)
        st.success("Hurray :)  we got the result")
        #st.success("The output value --> {}".format(output))
    
-       st.success("Probability that the tweet is negative --> {}".format(prob[0][0]))
-       st.success("Probability that the tweet is positive --> {}".format(prob[0][1]))
-       if output == 'negative':
-          st.success("The sentiment of the tweet is NEGATIVE") 
+       #st.success("Probability that the tweet is negative --> {}".format(prob[0][0]))
+       #st.success("Probability that the tweet is positive --> {}".format(prob[0][1]))
+       #if output == 'negative':
+          #st.success("The sentiment of the tweet is NEGATIVE") 
 
-       else:
-          st.success("The sentiment of the tweet is POSITIVE") 
+       #else:
+          #st.success("The sentiment of the tweet is POSITIVE") 
         
 if __name__ == "__main__":              
     main()                   
