@@ -28,7 +28,7 @@ pickle_4 = open('log_model2.pkl', 'rb')
 classifier = pickle.load(pickle_4)
 pickle_4.close()'''
 
-minmaxscaler.clip = False
+#minmaxscaler.clip = False
 
 stopwords= ['i','im','me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've",\
             "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', \
