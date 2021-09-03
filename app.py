@@ -12,21 +12,21 @@ import re
 #nltk.download('wordnet') # dependancy   
 import numpy as np
 
-'''pickle_1 = open('glove_vocab.pkl', 'rb')
-glove_words = pickle.load(pickle_1)
-pickle_1.close()
+#pickle_1 = open('glove_vocab.pkl', 'rb')
+#glove_words = pickle.load(pickle_1)
+#pickle_1.close()
 
-pickle_2 = open('glove_vectors', 'rb') 
-model_key_vectors = pickle.load(pickle_2)
-pickle_2.close()
+#pickle_2 = open('glove_vectors', 'rb') 
+#model_key_vectors = pickle.load(pickle_2)
+#pickle_2.close()
 
-pickle_3 = open('normalizer2.pkl', 'rb') 
-minmaxscaler = pickle.load(pickle_3)
-pickle_3.close()
+#pickle_3 = open('normalizer2.pkl', 'rb') 
+#minmaxscaler = pickle.load(pickle_3)
+#pickle_3.close()
 
-pickle_4 = open('log_model2.pkl', 'rb') 
-classifier = pickle.load(pickle_4)
-pickle_4.close()'''
+#pickle_4 = open('log_model2.pkl', 'rb') 
+#classifier = pickle.load(pickle_4)
+#pickle_4.close()'''
 
 #minmaxscaler.clip = False
 
@@ -91,35 +91,35 @@ def preprocessing_txt(text_data):
     
     return preprocessed_text[0] # return the list
 
-'''def vectorize(new_tweet):
+#def vectorize(new_tweet):
     
-    avg_w2v_vector = []; # the avg-w2v for each sentence is stored in this list
+    #avg_w2v_vector = []; # the avg-w2v for each sentence is stored in this list
     
-    vector = np.zeros(300)          # Dim is 300
-    cnt_words =0;                   # num of words with a valid vector in the sentence
-    for word in new_tweet.split():   # for each word in a tweet/sentence
-        if word in glove_words: 
-            vector += model_key_vectors[word]
-            cnt_words += 1
-    if cnt_words != 0:
-        vector /= cnt_words
-    avg_w2v_vector.append(vector)  # Append the vector
+    #vector = np.zeros(300)          # Dim is 300
+    #cnt_words =0;                   # num of words with a valid vector in the sentence
+    #for word in new_tweet.split():   # for each word in a tweet/sentence
+        #if word in glove_words: 
+            #vector += model_key_vectors[word]
+            #cnt_words += 1
+    #if cnt_words != 0:
+        #vector /= cnt_words
+    #avg_w2v_vector.append(vector)  # Append the vector
 
-    return avg_w2v_vector[0]'''
+    #return avg_w2v_vector[0]'''
 
 
 
-'''def polarity_scores(new_tweet):
+#def polarity_scores(new_tweet):
     
     # Obtain the polarity scores of the tweet
-    scores = []
-    sid = SentimentIntensityAnalyzer() 
-    ss = sid.polarity_scores(new_tweet)   # Polarity scores computed
-    ss.pop('neu')
-    for k in ss.items():
-        scores.append(k[1])
+    #scores = []
+    #sid = SentimentIntensityAnalyzer() 
+    #ss = sid.polarity_scores(new_tweet)   # Polarity scores computed
+    #ss.pop('neu')
+    #for k in ss.items():
+        #scores.append(k[1])
         
-    return scores'''
+    #return scores'''
 
 
 def main():      
