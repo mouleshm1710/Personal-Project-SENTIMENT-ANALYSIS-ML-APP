@@ -1,5 +1,6 @@
  
 import pickle
+import joblib
 import streamlit as st
 import nltk #
 import gensim 
@@ -13,19 +14,19 @@ nltk.download('wordnet') # dependancy #
 import numpy as np
 
 pickle_1 = open('glove_vocab.pkl', 'rb') #
-glove_words = pickle.load(pickle_1) #
+glove_words = joblib.load(pickle_1) #
 pickle_1.close() #
 
 pickle_2 = open('glove_vectors', 'rb') #
-model_key_vectors = pickle.load(pickle_2)#
+model_key_vectors = joblib.load(pickle_2)#
 pickle_2.close()#
 
 pickle_3 = open('normalizer2.pkl', 'rb') #
-minmaxscaler = pickle.load(pickle_3)#
+minmaxscaler = joblib.load(pickle_3)#
 pickle_3.close()#
 
 pickle_4 = open('log_model2.pkl', 'rb') #
-classifier = pickle.load(pickle_4) #
+classifier = joblib.load(pickle_4) #
 pickle_4.close()#
 
 minmaxscaler.clip = False #
