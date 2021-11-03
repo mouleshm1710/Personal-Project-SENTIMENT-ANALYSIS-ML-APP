@@ -1,7 +1,7 @@
 numpy
 scikit-learn
 pandas
-streamlit
+streamlit==1.1.0
 gensim
 pickle-mixin
 nltk
