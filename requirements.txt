@@ -4,3 +4,4 @@ pandas
 streamlit
 gensim
 pickle-mixin
+nltk
